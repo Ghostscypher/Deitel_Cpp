@@ -1,0 +1,62 @@
+#include <iostream>//it has the standard input output function 
+
+#include <iomanip>//has functions for stream manipulators that format streams of data
+
+#include <cmath>//contain fumction prototypes for math library functions
+
+#include <cstdlib>/*Conatins functgion prototypes for conversions of numbers to
+text and text to numbers, memory allocation, random numbers, and various other
+utility functions*/
+
+#include <ctime>//contain function properties and types for manipulating the time and date
+
+///////////////////////////////////////////////////////////////////////////////////////
+#include <vector>//these headers contain classes that impliment C++ standard library
+#include <list>//containers. Containers store data during program execution.
+#include <deque>
+#include <queue>
+#include <stack>
+#include <map>
+#include <set>
+#include <bitset>
+///////////////////////////////////////////////////////////////////////////////////////
+
+#include <cctype>/*contain function prototypes that test characters for certain properties
+(such as wheter a charcter is a digit or punctuation). And function prototypes for function prototypes that
+can be used to convert uppercase to lowercase and vice versa*/
+
+#include <cstring>//contain C-style for string processing functions
+
+#include <typeinfo>//Contains classes for runtime type identification (determining data types at execution time).
+
+#include <exception>//These headers contain classes that are used for exception handling
+#include <stdexcept>
+
+#include <memory>//Contains classes and functions used by the C++ Standard Library to allocate memory to the C++ Standard Library containers.
+
+#include <fstream>//Contains function prototypes for functions that perform input from and output to files on disk
+
+#include <string>//Contains the definition of class string from the C++ Standard Library
+
+#include <sstream>//Contains function prototypes for functions that perform input from strings in memory and output to strings in memory
+
+#include <functional>//Contains classes and functions used by C++ Standard Library algorithms
+
+#include <iterator>//Contains classes for accessing data in the C++ Standard Library containers
+
+#include <algorithm>//Contains functions for manipulating data in C++ Standard Library containers.
+
+#include <cassert>//Contains macros for adding diagnostics that aid program debugging
+
+#include <cfloat>//Contains the floating-point size limits of the system
+
+#include <climits>//Contains the integral size limits of the system
+
+#include <cstdio>//Contains function prototypes for the C-style standard input/output library functions
+
+#include <locale>/*Contains classes and functions normally used by stream processing to process data in the natural
+form for different languages (e.g., monetary formats, sorting strings, character presentation, etc.). */
+ 
+#include <limits>//Contains classes for defining the numerical data type limits on each computer platform
+
+#include <utility>//Contains classes and functions that are used by many C++ Standard Library headers
