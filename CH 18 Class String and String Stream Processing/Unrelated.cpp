@@ -8,8 +8,9 @@ int main()
 		 << " |" << "\tGame Over\n"
 		 << " |" << "\tScore: \n"
 		 << " O\n";
-		 cout << "/|\\";
-		 cout << "\n" << " |";
-		 cout << "\n" << "/ \\" << endl;
+		 
+	 cout << "/|\\";
+	 cout << "\n" << " |";
+	 cout << "\n" << "/ \\" << endl;
 	
 }// End main

@@ -52,8 +52,8 @@ int main()
 	cout << n8 << " - 59 = " << (n8 - 59) << endl;*/
 	
 	HugeInt n8(1);
-	HugeInt n9(10);
+	HugeInt n9(-10);
 	HugeInt n10(100);
 	
-	cout << n10 << " - " << n9 << " - " << n8 << " = " << (n10 - n9 - n8);
+	cout << n10 << " - " << n9 << " - " << n8 << " = " << (n9 + n8);
 } // End main

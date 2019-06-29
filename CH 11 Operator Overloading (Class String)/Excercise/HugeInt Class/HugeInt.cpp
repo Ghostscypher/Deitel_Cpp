@@ -221,15 +221,26 @@ bool HugeInt::operator>=(const int secondValue) const
 /* Arithmetic operator */
 // Addition operator; HugeInt + HugeInt
 HugeInt HugeInt::operator+(const HugeInt &secondOperand) const
-{
+{	
 	HugeInt temp; // Temporary result
+	
+	/*
+	 * List of all possible situations represnted in a table
+	 * 
+	 * Situation RigthOp LeftOp Representation
+	 * #1        +ve     +ve    10 + 4
+	 * #2        +ve     -ve    10 + (-4) // Reduce to (10 - 4)
+	 * #3		 -ve     +ve    -10 + 4 // Change to (4 - 10)
+	 * #4        -ve     -ve    -10 + -4 // Change to (-10 - 4)
+	 */
+	
 	int carry = 0;
 	
 	for (int i = digits - 1; i >= 0; i--)
 	{
 		temp.integer[i] = integer[i] + secondOperand.integer[i] + carry;
 		
-		// Determine wheter to carry a 1
+		// Determine whether to carry a 1
 		if (temp.integer[i] > 9)
 		{
 			temp.integer[i] %= 10; // Reduce 0-9;
@@ -295,89 +306,18 @@ void HugeInt::operator+=(const int secondValue)
 HugeInt HugeInt::operator-(const HugeInt &secondOperand) const
 {	
 	HugeInt temp; // Temporary result
-	int borrow = 0;
 	
-	if (size == secondOperand.size)
-	{
-		// This is when the number of digits in both are equal
-		for (int i = digits - 1; i >= 0; i--)
-		{
-			
-			if (i == (position + 1))
-			{
-				temp.integer[i] = secondOperand.integer[i] - integer[i];
-				temp.integer[i] = -(temp.integer[i]);
-				temp.size++;
-				return temp;
-			} // End if
-	   	   
-	   	   // Check to see if the values are larger, equal, or smaller
-	   	   if (*this > secondOperand)
-		  	  temp.integer[i] = (integer[i] - secondOperand.integer[i]) + borrow;
-			else if (*this == secondOperand)
-				return temp;
-			else
-			{
-	  	 	 	 temp.integer[i] = (secondOperand.integer[i] - integer[i]) + borrow;
-	  	 	 	 temp.size++;
-			}
-			
-			// Check to see if the result is less than 0.
-			if (temp.integer[i] < 0)
-			{
-				temp.integer[i] += 10;
-				
-				if (i > (position + 1))
-					borrow = -1;
-				else
-					borrow = 0;
-			}
-			else
-				borrow = 0;	
-		} // End for
-		
-		return temp;
-	}
-	else if(size > secondOperand.size)
-	{
-		// This is when our number is greater than the second one
-		for (int i = digits - 1; i >= 0; i--)
-		{  
-			  temp.integer[i] = (integer[i] - secondOperand.integer[i]) + borrow;
-			  temp.size++;
-			  
-			// Check to see if the result is less than 0.
-			if (temp.integer[i] < 0)
-			{
-				temp.integer[i] += 10;
-				
-				if (i > (position + 1))
-					borrow = -1;
-				else
-					borrow = 0;
-			}
-			else
-				borrow = 0;	
-		} // End for
-		
-		return temp;
-	}
-	else
-	{
-		// This is when our number is smaller than the second operand
-		HugeInt tempMe; // Hold this class
-		HugeInt tempSecondOperand; // Hold the other class
-		
-		tempMe = *this;
-		tempSecondOperand = secondOperand;
-		
-		temp = (tempSecondOperand - tempMe);
-		
-		temp.integer[digits - temp.size] = -(temp.integer[digits - temp.size]);
-		
-		return temp;
-	}
-		
+	// Solve the problem by using two's complement
+	/*
+	 * List of all possible situations represnted in a table
+	 * 
+	 * Situation RigthOp LeftOp Representation
+	 * #1        +ve     +ve    10 - 4
+	 * #2        +ve     -ve    10 - (-4) // Change to 10 + 4
+	 * #3		 -ve     +ve    -10 - 4
+	 * #4        -ve     -ve    -10 - -4 // Change to 4 - 10
+	 */
+	
 	return temp; // Return copy if temporary object
 } // End operator-
 

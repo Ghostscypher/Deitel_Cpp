@@ -1,5 +1,5 @@
 /**
- * @brief We use C++ libarary cctype
+ * @brief We use C++ library cctype
  * i.e. 
  * 		#include <cctype>
  * 

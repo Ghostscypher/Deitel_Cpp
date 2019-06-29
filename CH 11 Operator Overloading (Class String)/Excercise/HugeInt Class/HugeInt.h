@@ -138,10 +138,10 @@ private:
 	int position;
 	
 	// Utility functions
-	HugeInt negativeAddition(const HugeInt &) const; // For -ve addition
-	HugeInt negativeSubtraction(const HugeInt &) const; // For -ve subtraction
 	int getSize(); // Will be used to get the size of objects
-	int getPosition(); // USed to get the position where the current object starts at
+	int getPosition(); // Used to get the position where the current object starts at
+	HugeInt flip(const HugeInt &, int); // Used to flip the numbers ready for two's complement
+	HugeInt doTwosComplement(const HugeInt &); // Perform two's complement on the given value
 }; // End class HugeInt
 
 #endif
