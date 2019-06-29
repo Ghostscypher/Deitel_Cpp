@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout>
 	<Files>
-		<File Name="HugeInt.cpp" Top="No" Tabpos="1" TopLine="208">
-			<Cursor Line="224" Column="3"/>
+		<File Name="HugeInt.cpp" Top="No" Tabpos="1" TopLine="455">
+			<Cursor Line="474" Column="1"/>
 		</File>
-		<File Name="HugeInt.h" Top="Yes" Tabpos="2" TopLine="110">
-			<Cursor Line="117" Column="2"/>
+		<File Name="HugeInt.h" Top="No" Tabpos="2" TopLine="192">
+			<Cursor Line="206" Column="1"/>
 		</File>
-		<File Name="main.cpp" Top="No" Tabpos="3" TopLine="29">
-			<Cursor Line="57" Column="2"/>
+		<File Name="main.cpp" Top="Yes" Tabpos="3" TopLine="28">
+			<Cursor Line="45" Column="52"/>
 		</File>
 	</Files>
 </Layout>
